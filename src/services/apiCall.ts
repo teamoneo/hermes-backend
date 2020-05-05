@@ -5,7 +5,7 @@ require ('dotenv').config();
 
 const apiKeyibm = process.env.IBM_API_KEY;
 
-export default async function getClassification(question: String) {
+export default async function getClassification(question: string) {
     const naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
       version: '2019-07-12',
       authenticator: new IamAuthenticator({
@@ -24,7 +24,7 @@ export default async function getClassification(question: String) {
       language: 'pt',
     };
   
-    let result = '';
+    let result = {};
   
     await naturalLanguageUnderstanding
       .analyze(analyzeParams)
