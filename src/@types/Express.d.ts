@@ -1,5 +1,5 @@
 declare namespace Express {
   export interface Request {
-    store: 'ml' | 'am' | 'ml_default' | 'amz';
+    store: 'ml' | 'am' | 'ml_default' | 'amz' | 'b2w';
   }
 }

@@ -1,11 +1,15 @@
-import NaturalLanguageUnderstandingV1 from 'ibm-watson/natural-language-understanding/v1';
+import NaturalLanguageUnderstandingV1, { AnalysisResults } from 'ibm-watson/natural-language-understanding/v1';
 import { IamAuthenticator } from 'ibm-watson/auth';
 
 require ('dotenv').config();
 
 const apiKeyibm = process.env.IBM_API_KEY;
 
-export default async function getClassification(question: string) {
+interface Response {
+  keywords: string;
+}
+
+export default async function getClassification(question: string): Promise<AnalysisResults> {
     const naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
       version: '2019-07-12',
       authenticator: new IamAuthenticator({
