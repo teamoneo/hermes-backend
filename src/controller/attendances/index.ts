@@ -9,7 +9,7 @@ import getClassification from './../../services/apiCall';
 
 import {Response, Request} from 'express';
 
-function getHtml(origin: String, callback: Function) {
+function getHtml(origin: string, callback: Function) {
   requestCherio(origin, function (error, response, html) { 
     if (!error && response.statusCode == 200) {
       callback(html);
